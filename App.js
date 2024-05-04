@@ -61,7 +61,6 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-
       {/* Area onde o resultado é exibido */}
       <View style={styles.results}>
         <Text style={styles.historyText}>{lastNumber}</Text>
@@ -70,7 +69,6 @@ export default function App() {
 
       {/* Area onde os botões são exibidos*/}
       <View style={styles.buttons}>
-
         {buttons.map((button) => 
           button === '=' ? // Mapeamento do botão =
         <TouchableOpacity onPress={() => handleInput(button)} key={button} style={[styles.button, {backgroundColor: '#3dd0e3'}]}>
