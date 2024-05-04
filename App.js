@@ -1,35 +1,35 @@
 import React from 'react';
-import {useState} from 'react'
+import {useState} from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Button } from 'react-native';
 
 export default function App() {
   // Mapeamento de teclas
   const buttons = ['LIMPAR', 'DEL', '%', '/', 7, 8, 9, "x", 6, 5, 4, '-', 3, 2, 1, '+', 0, '.', '+/-', '=']
 
-  const [currentNumber, setCurrentNumber] = useState("")
-  const [lastNumber, setLastNumber] = useState("")
+  const [currentNumber, setCurrentNumber] = useState("");
+  const [lastNumber, setLastNumber] = useState("");
 
 
-  function calculator(){
-    const splitNumbers = currentNumber.split(' ')
-    const fistNumber = parseFloat(splitNumbers[0])
-    const lastNumber = parseFloat(splitNumbers[2])
-    const operator = splitNumbers[1]
+  function calculator() {
+    const splitNumbers = currentNumber.split(' ');
+    const fistNumber = parseFloat(splitNumbers[0]);
+    const lastNumber = parseFloat(splitNumbers[2]);
+    const operator = splitNumbers[1]; 
 
     // Faz ação referente tecla pressionada
-    switch(operator){
+    switch(operator) {
       case '+':
-        setCurrentNumber((fistNumber + lastNumber).toString())
-        return
+        setCurrentNumber((fistNumber + lastNumber).toString());
+        return;
       case '-': 
-        setCurrentNumber((fistNumber - lastNumber).toString())
-        return
+        setCurrentNumber((fistNumber - lastNumber).toString());
+        return;
       case 'x':
-        setCurrentNumber((fistNumber * lastNumber).toString())
-        return
+        setCurrentNumber((fistNumber * lastNumber).toString());
+        return;
       case '/': 
-        setCurrentNumber((fistNumber / lastNumber).toString())
-        return
+        setCurrentNumber((fistNumber / lastNumber).toString());
+        return;
     }
   }
 
@@ -39,23 +39,23 @@ export default function App() {
       setCurrentNumber(currentNumber + " " + buttonPressed + " ")
       return
     }
-    switch(buttonPressed){
+    switch (buttonPressed) {
       case 'DEL':
-        setCurrentNumber(currentNumber.substring(0, (currentNumber.length - 2)))
-        return
+        setCurrentNumber(currentNumber.substring(0, currentNumber.length - 2));
+        return;
       case 'LIMPAR': // Limpa todo o conteúdo
-        setLastNumber("") 
-        setCurrentNumber("") 
-        return
+        setLastNumber('');
+        setCurrentNumber('');
+        return;
       case '=':
-        setLastNumber(currentNumber + " = ")
-        calculator()
-        return
-      case '+/-':
-        return
+        setLastNumber(currentNumber + ' = ');
+        calculator();
+        return;
+      case '+ / -':
+        return;
     }
 
-    setCurrentNumber(currentNumber + buttonPressed)
+    setCurrentNumber(currentNumber + buttonPressed);
   }
 
 
@@ -86,41 +86,41 @@ export default function App() {
 
 // Estilização
 const styles = StyleSheet.create({
-  container:{
+  container: {
     flex: 1,
   },
-  results:{
+  results: {
     flex: 2,
-    justifyContent: "center",
-    backgroundColor: "#f5f5f5"
+    justifyContent: 'center',
+    backgroundColor: '#f5f5f5',
   },
-  resultText:{
-    color: "#282F38",
+  resultText: {
+    color: '#282F38',
     fontSize: 32,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     padding: 12,
-    textAlign: "right"
+    textAlign: 'right',
   },
-  historyText:{
-    color: "#7c7c7c",
+  historyText: {
+    color: '#7c7c7c',
     fontSize: 20,
     marginRight: 10,
     alignSelf: 'flex-end',
   },
-  buttons:{
+  buttons: {
     flexDirection: 'row',
     flexWrap: 'wrap',
   },
-  button:{
+  button: {
     backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
-    minWidth: 90, 
+    minWidth: 90,
     minHeight: 90,
     flex: 2,
   },
-  textButton:{
-    color: "#7c7c7c",
+  textButton: {
+    color: '#7c7c7c',
     fontSize: 20,
   },
 });
