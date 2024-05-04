@@ -66,7 +66,7 @@ export default function App() {
       <View style={styles.results}>
         <Text style={styles.historyText}>{lastNumber}</Text>
         <Text style={styles.resultText}>{currentNumber}</Text>
-      <View>
+      </View>
 
       {/* Area onde os botões são exibidos*/}
       <View style={styles.buttons}>
@@ -88,15 +88,15 @@ export default function App() {
 
 // Estilização
 const styles = StyleSheet.create({
-  container: {
+  container:{
     flex: 1,
   },
-  results: {
+  results:{
     flex: 2,
     justifyContent: "center",
     backgroundColor: "#f5f5f5"
   },
-  resultText: {
+  resultText:{
     color: "#282F38",
     fontSize: 32,
     fontWeight: "bold",
@@ -109,11 +109,11 @@ const styles = StyleSheet.create({
     marginRight: 10,
     alignSelf: 'flex-end',
   },
-  buttons: {
+  buttons:{
     flexDirection: 'row',
     flexWrap: 'wrap',
   },
-  button: {
+  button:{
     backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
@@ -121,8 +121,8 @@ const styles = StyleSheet.create({
     minHeight: 90,
     flex: 2,
   },
-  textButton: {
+  textButton:{
     color: "#7c7c7c",
     fontSize: 20,
-  } 
+  },
 });
